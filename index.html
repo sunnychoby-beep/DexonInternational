@@ -619,26 +619,9 @@
   }
 
   // ---------- ₹999 Buyer List: Razorpay payment ----------
-  document.getElementById('pay-btn').addEventListener('click', function(){
-    // NOTE: Replace "rzp_test_XXXXXXXXXXXX" below with your real Razorpay Key ID
-    // (Dashboard → Settings → API Keys). This is the publishable Key ID, safe for
-    // client-side use. For production, generate the order server-side for full security;
-    // this client-only flow is fine to launch fast and upgrade later.
-    var options = {
-      "key": "rzp_test_XXXXXXXXXXXX",
-      "amount": "99900", // in paise = ₹999
-      "currency": "INR",
-      "name": "Dexon International",
-      "description": "Strategy Call + 100 Trade Records for Your HSN",
-      "handler": function (response){
-        var msg = "Hi Dexon International, I've just paid \u20b9999 for the Strategy Call + 100 Trade Details of my HSN. Payment ID: " + response.razorpay_payment_id + ". Please confirm my call slot and share the trade data.";
-        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
-      },
-      "theme": { "color": "#053041" }
-    };
-    var rzp = new Razorpay(options);
-    rzp.open();
-  });
+ document.getElementById('pay-btn').addEventListener('click', function(){
+  window.location.href = "https://superprofile.bio/bookings/dexonintetnational?sessionId=6a783bd96b9048001380fb5c";
+});
 
   // ---------- Custom service lead form → WhatsApp ----------
   document.getElementById('lead-form').addEventListener('submit', function(e){
